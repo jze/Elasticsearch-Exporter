@@ -60,6 +60,8 @@ exports.handleUncaughtExceptions = function (e) {
     log.error('Caught exception in Main process: %s'.bold, e.toString());
     if (e instanceof Error) {
         log.info(e.stack);
+    } else {
+        log.info(e);
     }
     log.die(2);
 };
